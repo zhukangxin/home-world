@@ -1,14 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
-# Create your views here.
-def home_page_view(request):
-    """
-    A view that returns a simple "Hello World!" response.
-    """
-    # You can use render to return an HTML template if needed
-    # return render(request, 'home.html')
+class HomePageView(TemplateView):
+    template_name = "home.html"
 
-    # For now, we'll just return a plain text response
-    return HttpResponse("Hello World!")
+
+class AboutPageView(TemplateView):
+    template_name = "about.html"
